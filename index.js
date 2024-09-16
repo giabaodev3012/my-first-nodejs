@@ -1,13 +1,13 @@
 const http = require("http");
-const hostname = "127.0.0.1";
-const port = 3000; // Định nghĩa biến port
+const port = process.env.PORT || 3000; // Sử dụng biến môi trường PORT từ Render
+const hostname = "0.0.0.0"; // Lắng nghe trên tất cả các địa chỉ IP
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
-  res.end("Hello giabaodevvvv nho\n");
+  res.end("Hello World\n");
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`); // Sử dụng dấu backticks
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
